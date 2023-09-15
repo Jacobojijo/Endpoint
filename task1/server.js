@@ -5,6 +5,13 @@ const app = express();
 
 app.listen(port);
 
+app.use(express.json());
+
+app.post('/api', (req, res) => {
+  console.log(req.body); // Access the parsed request body
+  // Your code to handle the request data here
+});
+
 const array_of_week = new Date().getDay();
 const days_of_week = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 app.get('/api', (req, res) => {
